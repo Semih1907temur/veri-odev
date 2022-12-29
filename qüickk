@@ -1,0 +1,70 @@
+package quıck;
+
+/**
+ *
+ * @author semih
+ */
+public class qüickk {
+    
+    
+    public int quıcksort10(int[] array,int left,int right,int x,int y){
+
+
+     if(left>=right){
+       
+         return 0;
+     }
+     int pivot=array[x];
+    
+     int leftpointer=left;
+     int rightpointer=right;
+     
+     while(leftpointer<rightpointer){
+         
+         while(array[leftpointer]<pivot&&leftpointer<rightpointer){//pivottan kücük olanlar
+             leftpointer++;
+            
+         }
+          while(array[rightpointer]>pivot&&leftpointer<rightpointer){//pivottan buyuk olanlar bulunuyor
+             rightpointer--;
+         
+         }
+          
+          int c;
+          c=array[leftpointer];
+          array[leftpointer]=array[rightpointer];
+          array[rightpointer]=c;
+y++;
+    
+     }
+           
+      int d;
+          d=array[leftpointer];
+          array[leftpointer]=array[rightpointer];
+          array[rightpointer]=d;
+
+       y+=   quıcksort10(array,left,leftpointer-1,leftpointer-1,y);
+    y+= quıcksort10(array,leftpointer+1,right,right,y);
+     return y;
+     
+  
+     
+    }
+
+  public void printArray(int[] arr, int size)
+    {
+        for (int i = 0; i < size; i++){
+            System.out.print(arr[i] + " ");
+  
+       
+        }
+      
+    }
+   
+      
+    
+    
+  
+    
+}
+
